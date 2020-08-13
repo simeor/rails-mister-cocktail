@@ -1,1 +1,10 @@
 // Specific CSS for your home-page
+
+body{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
