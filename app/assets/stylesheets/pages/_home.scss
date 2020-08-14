@@ -8,3 +8,16 @@ body{
   flex-direction: column;
   min-height: 100vh;
 }
+
+.form-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.form-control-file, .form-control-range {
+    display: block;
+    width: 80%;
+}

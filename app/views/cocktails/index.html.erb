@@ -2,15 +2,24 @@
   <body>
 <div class="container app-body">
 <h1>Cocktails</h1>
+
+
 <%=link_to new_cocktail_path, class: "btn btn-primary mb-3" do%>
   Create a Cocktail <i class="fas fa-cocktail"></i>
 <% end %>
  <div class="d-flex justify-content-center flex-wrap">
   <% @cocktails.each do |cocktail| %>
     <%=link_to cocktail_path(cocktail) do%>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.3)), url(https://source.unsplash.com/1600x900/?cocktail)">
+
+    <% if cocktail.photo.present? %>
+       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo.key, height: 300, width: 400, crop: :fill %>')">
         <%= cocktail.name %>
       </div>
+    <% else%>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1582837611539-e3020079eab6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=994&q=80')">
+        <%= cocktail.name %>
+      </div>
+    <% end%>
     <% end %>
   <% end %>
  </div>
