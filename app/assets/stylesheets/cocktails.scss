@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-body{
+.app-body {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,4 +15,9 @@ h1{
 
   ul{
     list-style-type: none;
+    padding: 0;
+  }
+
+  li{
+    padding: 4px;
   }

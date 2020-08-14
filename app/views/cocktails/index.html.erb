@@ -1,9 +1,10 @@
 
-
-
-<div class="container">
-<h1>Cocktails</i></h1>
-<%=link_to 'Create New Cocktail', new_cocktail_path, class: "btn btn-primary mb-3"%>
+  <body>
+<div class="container app-body">
+<h1>Cocktails</h1>
+<%=link_to new_cocktail_path, class: "btn btn-primary mb-3" do%>
+  Create a Cocktail <i class="fas fa-cocktail"></i>
+<% end %>
  <div class="d-flex justify-content-center flex-wrap">
   <% @cocktails.each do |cocktail| %>
     <%=link_to cocktail_path(cocktail) do%>
